@@ -295,6 +295,7 @@ html {
             color: black;
             text-align: center;
             padding-left: 15px;
+            cursor: pointer;
         }
 
         img {
@@ -346,7 +347,7 @@ html {
     margin: 20px 20px 20px 20px;
 
     // margin-top: 50px;
-    .item {
+    .product-item {
         // text-align: center;
         background-color: white;
         padding: 10px;
@@ -400,12 +401,12 @@ html {
     }
 }
 .list {
-    .item:hover{
+    .product-item:hover{
         img {
             // opacity: 0.3;
         }
     }
-    .item:hover {
+    .product-item:hover {
            background: #c0e4e9;
         .addCard {
             display: block;
