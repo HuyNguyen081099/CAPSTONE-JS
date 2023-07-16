@@ -14,8 +14,13 @@ openShopping.addEventListener('click', () => {
 
 //Đóng giỏ hàng
 closeShopping.addEventListener('click', () => {
+    listCards = [];
+    reloadCard();
     body.classList.remove('active');
 })
+
+
+
 
 
 //hiển thị theo sản phẩm
@@ -40,37 +45,13 @@ closeShopping.addEventListener('click', () => {
 // }
 
 function changeProduct(type, id) {
-    // console.log(type);
-    // let product = filterProductsById(products, 1) [0];
-    // console.log(product);
-
-    // element.style.backround = '#ee4d2d';
-
-    switch (type) {
-        case 'Samsung':
-            getElementById('#6').style.display = 'block';
-            getElementById('#1').style.display = 'block';
-            getElementById('#7').style.display = 'block';
-            getElementById('#8').style.display = 'block';
-            getElementById('#2').style.display = 'none';
-            getElementById('#3').style.display = 'none';
-            getElementById('#4').style.display = 'none';
-            getElementById('#5').style.display = 'none';
-        case 'Iphone':
-            getElementById('#2').style.display = 'block';
-            getElementById('#3').style.display = 'block';
-            getElementById('#4').style.display = 'block';
-            getElementById('#5').style.display = 'block';
-            getElementById('#1').style.display = 'none';
-            getElementById('#6').style.display = 'none';
-            getElementById('#7').style.display = 'none';
-            getElementById('#8').style.display = 'none';
-            break;
-    }
+    this.renderCard(type);
 }
 
+let currentProduct = [];
+
 //tạo product
-let products = [
+const products = [
     {
         id: 1,
         name: 'GALAXY S22 ULTRA',
@@ -167,14 +148,21 @@ let products = [
 
 //card
 let listCards = [];
-function renderCard() {
-    products.forEach((value, key) => {
+function renderCard(type) {
+    let productFilter = [...products];
+    if (type) {
+        productFilter = [...productFilter].filter(p => p.type === type);
+        currentProduct.forEach(p => {
+            document.getElementById('listCard').removeChild(document.getElementById(p.id));
+        });
+    }
+
+    productFilter.forEach((value, key) => {
         // console.log(value)
         let newDiv = document.createElement('div');
         newDiv.id = value.id;
         newDiv.type = value.type;
-        newDiv.classList.add('item',);
-        newDiv.classList.add('item',);
+        newDiv.classList.add('product-item');
         newDiv.innerHTML = `
             <img src="image/${value.image}">
             <div class="title">${value.name}</div>
@@ -185,17 +173,14 @@ function renderCard() {
             <div class="price">${value.price.toLocaleString()} $</div>
             <button class="addCard" onclick="addToCard(${key})">Thêm vào giỏ hàng</button>`;
         list.appendChild(newDiv);
-    })
-    // console.log(list);
+    });
+    currentProduct = [...productFilter];
 }
+
 renderCard()
-
-
 
 const cardOnList = document.querySelector('section');
 console.log(cardOnList);
-
-
 
 // số trên giỏ hàng
 function addToCard(key) {
@@ -226,7 +211,7 @@ function reloadCard() {
                     <button onclick="changeQuantity(${key}, ${value.quantity - 1})">-</button>
                     <div class="count">${value.quantity}</div>
                     <button onclick="changeQuantity(${key}, ${value.quantity + 1})">+</button>
-                    <div class="con1">Xóa</div>
+                    <div id="con1" onclick="onDeleteItem(${key})">Xóa</div>
                 </div>
                 <hr>`;
             listCard.appendChild(newDiv);
@@ -249,6 +234,21 @@ function changeQuantity(key, quantity) {
     reloadCard();
 }
 
-
-function xoathongtinSP() {
+function onDeleteItem(key) {
+    delete listCards[key];
+    reloadCard();
 }
+
+// $('body').click(function (event) {
+//    if(!$(event.target).closest('#modal').length && !$(event.target).is('#modal')) {
+//      $(".card").hide();
+//    }     
+// });
+
+
+// $(document).click(function(event) {
+//     //if you click on anything except the modal itself or the "open modal" link, close the modal
+//     if (!$(event.target).closest(".card,.shopping").length) {
+//       $("body").find(".card").removeClass("active");
+//     }
+//   });
