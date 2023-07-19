@@ -12,6 +12,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="stylesheet" href="./css/main.css">
+
 </head>
 
 <body>
@@ -33,13 +34,13 @@
             <h1>CYBER PHONE</h1>
             <div id="menu">
                 <div class="item">
-                    <a href="">Trang chủ</a>
+                    <a href="http://127.0.0.1:5500/index.html">Trang chủ</a>
                 </div>
                 <div class="item">
                     <a href="#listCard">Sản phẩm</a>
                 </div>
                 <div class="item">
-                    <a href="">Liên hệ</a>
+                    <a href="#hello">Liên hệ</a>
                 </div>
             </div>
             <div id="actions">
@@ -91,7 +92,7 @@
         </div>
         <div class="wrap">
             <div class="search">
-                <input type="text" class="searchTerm" placeholder="Tìm kiếm">
+                <input type="text" class="searchTerm" placeholder="Tìm kiếm" id="searchName">
                 <button type="submit" class="searchButton">
                     <i class="fa fa-search"></i>
                 </button>
@@ -118,6 +119,7 @@
         <div class="checkOut">
             <div class="total">0</div>
             <div class="closeShopping">Thanh toán</div>
+            <button class="closeCard">Đóng</button>
         </div>
     </div>
 
@@ -137,11 +139,76 @@
     </button>
 
 
-    <footer class="endbody">
-        <div class="fullfooter">
-            <div class="1-footer"></div>
-            <div class="2-footer"></div>
-            <div class="3-footer"></div>
+  
+
+
+
+    <footer class="site-footer" id="hello">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-md-3">
+                    <h6>Thông tin và chính sách</h6>
+                    <p class="text-justify">Mua hàng và thanh toán online</p>
+                    <p class="text-justify">Mua hàng trả góp online</p>
+                    <p class="text-justify">Tra thông tin đơn hàng</p>
+                    <p class="text-justify">Tra thông tin bảo hành</p>
+                    <p class="text-justify">Xem ưu đãi</p>
+                    <p class="text-justify">Trung tâm bảo hành chính hãng</p>
+                </div>
+
+                <div class="col-sm-6 col-md-3">
+                    <h6>Tổng đài hỗ trợ miễn phí</h6>
+                    <p class="text-justify">Address: </p>
+                    <p class="text-justify">
+                        Số điện thoại:<a href="">+00000000000</a>
+                    </p>
+                    <p class="text-justify">
+                        Email : <a href="">123abc@gmail.com</a>
+                    </p>
+                   
+                </div>
+
+                <div class="col-xs-6 col-md-3">
+                    <h6>Dịch vụ và thông tin khác</h6>
+                    <ul class="footer-links">
+                        <li><a href="">Ư đãi thanh toán</a></li>
+                        <li><a href="">Chính sách bảo hành</a></li>
+                        <li><a href="">Tuyển dụng</a></li>
+                        <li><a href="">Liên hệ hợp tác kinh doanh</a></li>
+                        <li><a href="">Dịch vụ bảo hành điện thoại</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-xs-6 col-md-3">
+                    <h6>Kết với với Cyber Phone</h6>
+                    <ul class="footer-links">
+                        <li><a href="">About Us</a></li>
+                        <li><a href="">Contact Us</a></li>
+                        <li><a href="">Contribute</a></li>
+                        <li><a href="">Privacy Policy</a></li>
+                        <li><a href="">Sitemap</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-sm-6 col-xs-12">
+                    <p class="copyright-text">Copyright &copy; 2023 All Rights Reserved by
+                        <a href="#">Scanfcode</a>.
+                    </p>
+                </div>
+
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <ul class="social-icons">
+                        <li><a class="facebook" href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                        <li><a class="twitter" href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                        <li><a class="dribbble" href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                        <li><a class="linkedin" href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </footer>
 

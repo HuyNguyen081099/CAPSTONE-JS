@@ -1,5 +1,6 @@
 let openShopping = document.querySelector('.shopping');
 let closeShopping = document.querySelector('.closeShopping');
+let closeCard = document.querySelector('.closeCard');
 let list = document.querySelector('.list');
 let listCard = document.querySelector('.listCard');
 let body = document.querySelector('body');
@@ -12,11 +13,18 @@ openShopping.addEventListener('click', () => {
     body.classList.add('active');
 })
 
-//Đóng giỏ hàng
+//Thanh toán giỏ hàng
 closeShopping.addEventListener('click', () => {
     listCards = [];
     reloadCard();
     body.classList.remove('active');
+    
+})
+
+//Đóng gỏ hàng
+closeCard.addEventListener('click', () => {
+    body.classList.remove('active');
+    
 })
 
 
@@ -56,7 +64,7 @@ const products = [
         id: 1,
         name: 'GALAXY S22 ULTRA',
         screen: 'Dynamic AMOLED 2X 6.8" Quad HD+ (2K+)',
-        blackCamera: '12MP',
+        backCamera: '12MP',
         frontCamera: '48MP',
         desc: 'Khối lượng của máy 228 g cho cảm giác cầm nắm đầm tay, khi cầm máy trần thì hơi có cảm giác dễ trượt.',
         type: 'samsung',
@@ -67,7 +75,7 @@ const products = [
         id: 2,
         name: 'IPHONE 11 PROMAX',
         screen: 'màn hình Dynamic Island ',
-        blackCamera: '12MP',
+        backCamera: '12MP',
         frontCamera: '48MP',
         desc: 'Sở hữu thiết kế màn hình Dynamic Island ấn tượng cùng màn hình OLED và hiệu năng vượt trội với chip A16 Bionic',
         type: 'iphone',
@@ -78,7 +86,7 @@ const products = [
         id: 3,
         name: 'IPHONE 12 PROMAX ',
         screen: 'màn hình Dynamic Island ',
-        blackCamera: '12MP',
+        backCamera: '12MP',
         frontCamera: '48MP',
         desc: 'Sở hữu thiết kế màn hình Dynamic Island ấn tượng cùng màn hình OLED và hiệu năng vượt trội với chip A16 Bionic',
         type: 'iphone',
@@ -89,7 +97,7 @@ const products = [
         id: 4,
         name: 'IPHONE 13 PRO',
         screen: 'Màn hình Dynamic Island ',
-        blackCamera: '12MP',
+        backCamera: '12MP',
         frontCamera: '48MP',
         desc: 'Sở hữu thiết kế màn hình Dynamic Island ấn tượng cùng màn hình OLED và hiệu năng vượt trội với chip A16 Bionic',
         type: 'iphone',
@@ -100,7 +108,7 @@ const products = [
         id: 5,
         name: 'IPHONE 14  PROMAX',
         screen: 'Màn hình Dynamic Island ',
-        blackCamera: '12MP',
+        backCamera: '12MP',
         frontCamera: '48MP',
         desc: 'Sở hữu thiết kế màn hình Dynamic Island ấn tượng cùng màn hình OLED và hiệu năng vượt trội với chip A16 Bionic',
         type: 'iphone',
@@ -111,7 +119,7 @@ const products = [
         id: 6,
         name: 'SAMSUNG GALAXY A71',
         screen: 'Dynamic AMOLED 2X 6.8" Quad HD+ (2K+)',
-        blackCamera: '12MP',
+        backCamera: '12MP',
         frontCamera: '48MP',
         desc: 'Khối lượng của máy 228 g cho cảm giác cầm nắm đầm tay, khi cầm máy trần thì hơi có cảm giác dễ trượt.',
         type: 'samsung',
@@ -122,7 +130,7 @@ const products = [
         id: 7,
         name: 'SAMSUNG GALAXY S20 ULTRA',
         screen: 'Dynamic AMOLED 2X 6.8" Quad HD+ (2K+)',
-        blackCamera: '12MP',
+        backCamera: '12MP',
         frontCamera: '48MP',
         desc: 'Khối lượng của máy 228 g cho cảm giác cầm nắm đầm tay, khi cầm máy trần thì hơi có cảm giác dễ trượt.',
         type: 'samsung',
@@ -133,7 +141,7 @@ const products = [
         id: 8,
         name: 'SAMSUNG GALAXY S21',
         screen: 'Dynamic AMOLED 2X 6.8" Quad HD+ (2K+)',
-        blackCamera: '12MP',
+        backCamera: '12MP',
         frontCamera: '48MP',
         desc: 'Khối lượng của máy 228 g cho cảm giác cầm nắm đầm tay, khi cầm máy trần thì hơi có cảm giác dễ trượt.',
         type: 'samsung',
@@ -238,6 +246,7 @@ function onDeleteItem(key) {
     delete listCards[key];
     reloadCard();
 }
+
 
 // $('body').click(function (event) {
 //    if(!$(event.target).closest('#modal').length && !$(event.target).is('#modal')) {

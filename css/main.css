@@ -1,4 +1,24 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,200;1,400;1,500&display=swap");
+@media (max-width: 991px) {
+  .site-footer [class^=col-] {
+    margin-bottom: 30px;
+  }
+}
+@media (max-width: 767px) {
+  .site-footer {
+    padding-bottom: 0;
+  }
+  .site-footer .copyright-text,
+  .site-footer .social-icons {
+    text-align: center;
+  }
+}
+@media (max-width: 767px) {
+  .social-icons li.title {
+    display: block;
+    margin-right: 0;
+    font-weight: 600;
+  }
+}
 * {
   padding: 0;
   margin: 0;
@@ -18,7 +38,7 @@ html {
 }
 
 #header {
-  background-color: #4e78db;
+  background-image: linear-gradient(150deg, #55072b, #3c00bd);
   width: 100%;
   padding: 0px 30px;
   padding-top: 33px;
@@ -29,6 +49,7 @@ html {
   position: sticky;
   bottom: 0;
   top: 0;
+  color: rgb(185, 166, 166);
 }
 
 .container {
@@ -81,6 +102,10 @@ html {
   height: 100px;
 }
 
+.item_1:hover {
+  color: #004697;
+}
+
 .item_2 {
   display: inline-block;
   margin: 0 20px;
@@ -93,6 +118,10 @@ html {
 .item_2 img {
   width: 100px;
   height: 100px;
+}
+
+.item_2:hover {
+  color: #004697;
 }
 
 .wrap {
@@ -133,7 +162,7 @@ html {
   margin: 0px 25px;
 }
 #menu .item a {
-  color: black;
+  color: rgb(185, 166, 166);
   text-decoration: none;
 }
 
@@ -160,6 +189,7 @@ html {
 }
 #actions img {
   width: 30px;
+  color: white;
 }
 #actions span {
   background: red;
@@ -210,7 +240,7 @@ html {
   bottom: 0;
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: auto auto auto;
 }
 .card .checkOut div {
   background-color: #4b7db7;
@@ -240,6 +270,7 @@ html {
   color: black;
   text-align: center;
   padding-left: 15px;
+  cursor: pointer;
 }
 .card .listCard li img {
   width: 80%;
@@ -338,7 +369,7 @@ html {
   height: 40px;
   width: 40px;
   display: flex;
-  background-color: #d0f30d;
+  background-color: #004697;
   justify-content: center;
   align-items: center;
   text-decoration: none;
@@ -346,4 +377,128 @@ html {
   bottom: 20px;
   right: 20px;
   color: white;
+}
+
+.site-footer {
+  background-color: #26272b;
+  padding: 45px 0 20px;
+  font-size: 15px;
+  line-height: 24px;
+  color: #737373;
+}
+.site-footer hr {
+  border-top-color: #bbb;
+  opacity: 0.5;
+}
+.site-footer .small {
+  margin: 20px 0;
+}
+.site-footer h6 {
+  color: #fff;
+  font-size: 16px;
+  text-transform: uppercase;
+  margin-top: 5px;
+  letter-spacing: 2px;
+}
+.site-footer a {
+  color: #737373;
+}
+
+.site-footer a:hover {
+  color: #3366cc;
+  text-decoration: none;
+}
+
+.footer-links {
+  padding-left: 0;
+  list-style: none;
+}
+.footer-links li {
+  display: block;
+}
+.footer-links a {
+  color: #737373;
+}
+
+.footer-links a:active,
+.footer-links a:focus,
+.footer-links a:hover {
+  color: #004697;
+  text-decoration: none;
+}
+
+.footer-links.inline li {
+  display: inline-block;
+}
+
+.site-footer .social-icons {
+  text-align: right;
+}
+.site-footer .social-icons a {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  margin-left: 6px;
+  margin-right: 0;
+  border-radius: 100%;
+  background-color: #33353d;
+}
+
+.copyright-text {
+  margin: 0;
+}
+
+.social-icons {
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+.social-icons li {
+  display: inline-block;
+  margin-bottom: 4px;
+}
+.social-icons li .title {
+  margin-right: 15px;
+  text-transform: uppercase;
+  color: #96a2b2;
+  font-weight: 700;
+  font-size: 13px;
+}
+.social-icons a {
+  background-color: #eceeef;
+  color: #818a91;
+  font-size: 16px;
+  display: inline-block;
+  line-height: 44px;
+  width: 44px;
+  height: 44px;
+  text-align: center;
+  margin-right: 8px;
+  border-radius: 100%;
+  transition: all 0.2s linear;
+}
+.social-icons a .facebook:hover {
+  background-color: #004697;
+}
+.social-icons a .twitter:hover {
+  background-color: #004697;
+}
+.social-icons a .linkedin:hover {
+  background-color: #004697;
+}
+.social-icons a .dribbble:hover {
+  background-color: #ea4c89;
+}
+.social-icons size-sm a {
+  line-height: 34px;
+  height: 34px;
+  width: 34px;
+  font-size: 14px;
+}
+
+.social-icons a:active,
+.social-icons a:focus,
+.social-icons a:hover {
+  color: #fff;
+  background-color: #004697;
 }/*# sourceMappingURL=main.css.map */
